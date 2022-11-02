@@ -4,7 +4,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname, "src", "database", "database.db")
+      filename: path.resolve(__dirname, "stage08", "src", "database", "database.db")
     },
     pool: {
       afterCreate: (conn, cb) => conn.run("PRAGMA foreign_keys = ON", cb)
@@ -13,7 +13,7 @@ module.exports = {
     useNullAsDefault: true,
     //permitir conteudo nulo
     migrations: {
-      directory: path.resolve(__dirname, "src", "database", "knex", "migrations"),
+      directory: path.resolve(__dirname, "stage08", "src", "database", "knex", "migrations"),
     }
   },
 };

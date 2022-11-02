@@ -42,7 +42,7 @@ class NotesController {
     }
 
     async index(request, response) {
-        const { user_id, title, tags } = request.query;
+        const { user_id, title, rating, tags } = request.query;
 
         let notes;
 
@@ -53,6 +53,7 @@ class NotesController {
                 .select([
                     "notes.id",
                     "notes.title",
+                    "notes.rating",
                     "notes.user_id",
                 ])
                 .where("notes.user_id", user_id)
